@@ -1,0 +1,161 @@
+<!-- <div class="card" style="margin-left: 20%; margin-right: 20%; margin-top: 10%;">
+<form #myForm="ngForm" [formGroup]="formValue" id="myForm">
+    <label for="name" class="form-control-label">First Name:</label>
+    <input type="text" id="name" formControlName="name" class="form-control" style="width:50%;">
+    <label for="email" class="form-control-label">Email:</label>
+    <input type="email" id="email" formControlName="email" class="form-control" style="width: 50%;">
+    <br>
+    <div class="mb-3">
+    <button (click)="submitForm()" class="btn btn-primary">Alright</button>
+    </div>
+</form>
+</div> -->
+
+<!-- <form class="form-horizontal"
+      role="form">
+  <p>Do you approve this invoice?</p>
+  <div class="form-group">
+    <label class="control-label col-md-2">Invoice Document</label>
+    <div class="form-control-static col-md-10">
+      <a cam-file-download="invoiceDocument"></a>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2">Creditor</label>
+    <div class="col-md-10">
+      <input cam-variable-name="creditor"
+             type="text"
+             name="creditor"
+             readonly="true"
+             class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2">Amount</label>
+    <div class="col-md-10">
+      <input cam-variable-name="amount"
+             type="text"
+             name="amount"
+             readonly="true"
+             class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2">Invoice Category</label>
+    <div class="col-md-10">
+      <input cam-variable-name="invoiceCategory"
+             type="text"
+             name="amount"
+             readonly="true"
+             class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-2">Invoice Number</label>
+    <div class="col-md-10">
+      <input cam-variable-name="invoiceNumber"
+             type="text"
+             name="invoiceNumber"
+             readonly="true"
+             class="form-control" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-10 col-md-offset-2">
+      <div class="checkbox">
+       
+
+        <input cam-variable-name="approved"
+                 cam-variable-type="Boolean"
+                 type="checkbox"
+                 name="approved"
+                 class="form-checkbox" />
+                 <label>
+                    Do you approve?
+                 </label>
+      </div>
+    </div>
+  </div>
+  <button (click)="submitForm()">Click Me</button>
+</form> -->
+
+<div class="grid" >
+    <div class="col-12 md:col-12" style="padding:2em">
+      <div class="card p-fluid p-5 pb-8">
+        <form (ngSubmit)="submitForm()">
+  
+          <p>Do you approve this invoice?</p>
+  
+          <div class="form-group">
+            <label class="control-label col-md-2" for="assignee">Assignee</label>
+            <div class="col-md-10">
+              <input pInputText
+                     cam-variable-name="Assignee"
+                     type="text"
+                     id="assignee"
+                     name="assignee"
+                    
+                     class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2" for="amount">Amount</label>
+            <div class="col-md-10">
+              <input cam-variable-name="Meal"
+                     pInputText
+                     id="amount"
+                     type="text"
+                     name="amount"
+                    
+                     class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2" for="invoice">Invoice Category</label>
+            <div class="col-md-10">
+              <input cam-variable-name="Finance"
+                     type="text"
+                     pInputText
+                     id="invoice"
+                     name="amount"
+                     
+                     class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2" for="invoiceNumber">Invoice Number</label>
+            <div class="col-md-10">
+              <input cam-variable-name="invoiceNumber"
+                     type="text"
+                     pInputText
+                     name="invoiceNumber"
+                     id="invoiceNumber"
+                     
+                     class="form-control" />
+            </div>
+
+            <div class="form-group pt-3">
+                <div class="field-checkbox">
+                  <p-checkbox [binary]="true" id="binary"></p-checkbox>
+                  <label for="binary">check</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-2" for="dropdown">Dropdown</label>
+                <div class="col-md-10">
+                  <p-dropdown [options]="options" id="dropdown" placeholder="Select a City" optionLabel="name" optionValue="value" [showClear]="true">
+                  </p-dropdown>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-2" for="multiSelect">multi Select</label>
+                <div class="col-md-10">
+                  <p-multiSelect [options]="options" id="multiSelect" defaultLabel="Select a City" optionLabel="name" ></p-multiSelect>
+                </div>
+              </div>
+          </div>
+                <button (click)="submitForm" class="btn btn-danger">Click</button>
+        </form>
+      </div>
+    </div>
+  </div>

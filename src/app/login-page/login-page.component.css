@@ -1,0 +1,13 @@
+.card{
+    border: none;
+    width: 500px;
+    padding:40px;
+    position: absolute;
+    top: 100px;
+    left: 30%;
+    transform: hsla(205,46%,30%,1);
+    background: linear-gradient(to right, red 50%,blue 50%)
+}
+#header{
+    color: azure
+}

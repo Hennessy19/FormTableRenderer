@@ -1,0 +1,104 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "Samson",
+      "lastName": "Wanendeya",
+      "email": "swanendeya@yimuka.com",
+      "phoneNumber": "+256751767405",
+      "gender": "Male"
+    },
+    {
+      "id": 2,
+      "firstName": "Wanendeya",
+      "lastName": "Samson Nathan",
+      "email": "nateniel18@gmail.com",
+      "phoneNumber": "+256751767405",
+      "gender": "Male"
+    },
+    {
+      "id": 3,
+      "firstName": "Mercy",
+      "lastName": "Grace",
+      "email": "mercyGrace@gmail.com",
+      "phoneNumber": "+256705295320",
+      "gender": "Female"
+    },
+    {
+      "id": 4,
+      "firstName": "Donah",
+      "lastName": "Gracious",
+      "email": "donahGray@yahoo.com",
+      "phoneNumber": "+256393110463",
+      "gender": "Female"
+    },
+    {
+      "id": 5,
+      "firstName": "Donald",
+      "lastName": "Duck",
+      "email": "donaldtheduck@gmail.com",
+      "phoneNumber": "+391234567788",
+      "gender": "Male"
+    },
+    {
+      "id": 6,
+      "firstName": "Bruce",
+      "lastName": "Wayne",
+      "email": "batman@gmail.com",
+      "phoneNumber": "+256751767405",
+      "gender": "Male"
+    },
+    {
+      "name": "WANENDEYA SAMSON NATHAN",
+      "email": "nateniel18@gmail.com",
+      "id": 7
+    },
+    {
+      "name": "Samson Wanendeya",
+      "email": "swanendeya@yimuka.com",
+      "id": 9
+    },
+    {
+      "name": "WANENDEYA SAMSON NATHAN",
+      "email": "nateniel18@gmail.com",
+      "id": 22
+    },
+    {
+      "name": "Samson Wanendeya",
+      "email": "swanendeya@yimuka.com",
+      "id": 28
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 29
+    },
+    {
+      "name": "",
+      "email": "",
+      "id": 30
+    },
+    {
+      "id": 35,
+      "firstName": "Wanendeya",
+      "lastName": "Samson Nathan",
+      "email": "nateniel18@gmail.com",
+      "phoneNumber": "+256751767405",
+      "gender": "Male",
+      "firstNameLabel": ""
+    }
+  ],
+  "signUpUsers": [
+    {
+      "email": "swanendeya@yimuka.com",
+      "firstName": "Samson",
+      "lastName": "Wanendeya",
+      "password": "pass1234",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

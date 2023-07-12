@@ -3,6 +3,9 @@ import { FormBuilder,FormGroup } from '@angular/forms';
 import { PersonModel } from '../person_dashboard';
 import { ApiService } from '../services/api.service';
 import { first } from 'rxjs';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { Checkbox } from 'primeng/checkbox';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +14,6 @@ import { first } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
  
-
 formValue!:FormGroup;
 showAdd! :boolean;
 showUpdate! :boolean;
@@ -19,7 +21,11 @@ showUpdate! :boolean;
 personModelObj:PersonModel=new PersonModel();
 personData:any;
 searchQuery='';
-filteredData:any;
+
+page=1;
+pageSize=10;
+
+// filteredData:any;
 
 
 constructor(private formBuilder:FormBuilder,private api:ApiService){}
@@ -32,7 +38,7 @@ ngOnInit(): void {
       gender:['']
     })
     this.getAllPeople();
-    this.filteredData= this.personData
+
 }
 
 clickAddPerson(){
@@ -47,6 +53,7 @@ postPersonDetails(){
   this.personModelObj.email=this.formValue.value.email;
   this.personModelObj.phoneNumber=this.formValue.value.phoneNumber;
   this.personModelObj.gender=this.formValue.value.gender;
+  // this.personModelObj.firstNameLabel= this.formValue.
 
   this.api.postPerson(this.personModelObj).subscribe({
     next:res=>{
@@ -66,6 +73,11 @@ getAllPeople(){
   this.api.getPerson()
   .subscribe(res=>{
     this.personData=res;
+    console.log(res);
+    res.forEach((ele: { firstName: any; }) => {
+      console.log(ele.firstName)
+      
+    });
   })
 }
 
@@ -109,10 +121,27 @@ updatePersonDetails(){
   })
 }
 
-onSearch(){
-  // this.filteredData = this.personData.filter((item: { firstName: string; }) =>
-  //   item.firstName.toLowerCase().includes(this.searchQuery.toLowerCase())
-  // );
+selectAction(){
+  //delete all the selected records
+
+  // get all the elements of input type checkbox
+  // get the ones which are checked 
+  // delete the ones which are cheked
+
+  const checkboxes=document.querySelectorAll('input[type=checkbox]');
+    let myArray=[];
+
+  for(let i=0;i<checkboxes.length;i++){
+    let checkbox=checkboxes[i];
+    if(checkbox instanceof HTMLInputElement && checkbox.checked){
+      //push the row into myArray as an object
+      //pass the whole array into the delete people method
+
+     
+  
+    }
+  }
+  
 }
 
 

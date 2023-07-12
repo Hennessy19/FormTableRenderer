@@ -4,10 +4,10 @@
     </div>
 
     <div style="align-items: center;">
-      <!-- <form class="d-flex" role="search" style="align-items: center;"> -->
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchQuery" [ngModelOptions]="{standalone: true}" >
-        <button class="btn btn-outline-success" type="submit" (click)="onSearch()">Search</button>
-      <!-- </form> -->
+    </div>
+    <div class="d-flex">
+      <button class="btn btn-success" (click)="selectAction()">Select</button>
     </div>
 
         <div class="d-flex ">
@@ -16,8 +16,8 @@
 </nav>
 <table class="table mt-3">
     <thead>
-        <tr>
-            <th scope="col">ID</th>
+        <tr><th scope="col" style="max-width: 10px;">#</th>
+            <th scope="col" style="max-width: 50px;">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
@@ -27,7 +27,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of personData | search:searchQuery ">
+        <tr class="clickable" onclick="onEdit(row)" *ngFor="let row of personData | search:searchQuery | slice: (page-1) * pageSize : page * pageSize " scope="col">
+            <td>
+              <input type="checkbox" class="check">
+            </td>
             <td>{{row.id}}</td>
             <td>{{row.firstName}}</td>
             <td>{{row.lastName}}</td>
@@ -41,6 +44,7 @@
             </td>
         </tr>
     </tbody>
+    <ngb-pagination [(page)]="page" [collectionSize]="personData.length" [pageSize]="10"></ngb-pagination>
 </table>
 
 

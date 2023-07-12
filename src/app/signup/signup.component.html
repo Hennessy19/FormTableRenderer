@@ -1,0 +1,47 @@
+<script>
+    function toggleButton() {
+      var checkbox = document.getElementById('checkbox');
+      var button = document.getElementById('button_1');
+      
+      button.disabled = !checkbox.checked;
+    }
+  </script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1 id="header">Register</h1>
+                    
+                </div>
+                <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+                    
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for='firstName'>First Name</label>
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for='lastName'>Last Name</label>
+                        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" id="checkbox" onchange="toggleButton()">
+                      <label class="form-check-label" for="exampleCheck1">Agree to <a href="#">terms and Conditions</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="button_1">Submit</button>
+                  </form>
+                 <p> Already have an account<a routerLink="/login">Click here</a></p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
